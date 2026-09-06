@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Waypoint — {% block title %}{% endblock %}</title>
+  <style>
+    body { font: 14px/1.5 -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem auto; max-width: 60rem; color: #1c1c1c; }
+    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    nav a { margin-right: 1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0 2rem; }
+    th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #e2e2e2; }
+    th { background: #f6f6f6; font-weight: 600; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .muted { color: #6b6b6b; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Shortlists</a>
+    <a href="/releases/">Releases</a>
+    <a href="/webhooks/">Webhooks</a>
+    <span class="muted">{{ organization.name }}</span>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

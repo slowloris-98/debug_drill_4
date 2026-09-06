@@ -1,0 +1,37 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Shortlists{% endblock %}
+{% block content %}
+<h1>Assessment summary</h1>
+<table>
+  <tr>
+    <th>Assessment</th><th>Pass mark</th><th>Reports</th><th>Attempted</th>
+    <th>Not attempted</th><th>Passed</th><th>Pass rate</th><th>Average</th>
+  </tr>
+  {% for row in summaries %}
+  <tr>
+    <td><a href="/?assessment={{ row.assessment_id }}">{{ row.assessment }}</a></td>
+    <td class="num">{{ row.pass_mark }}</td>
+    <td class="num">{{ row.reports }}</td>
+    <td class="num">{{ row.attempted }}</td>
+    <td class="num">{{ row.not_attempted }}</td>
+    <td class="num">{{ row.passed }}</td>
+    <td class="num">{{ row.pass_rate }}</td>
+    <td class="num">{{ row.average_score }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h1>{{ assessment.name }}</h1>
+<p class="muted">Candidates at or above the pass mark, best first.</p>
+<table>
+  <tr><th>#</th><th>Candidate</th><th>Reference</th><th>Score</th></tr>
+  {% for entry in entries %}
+  <tr>
+    <td class="num">{{ forloop.counter }}</td>
+    <td>{{ entry.candidate_name }}</td>
+    <td class="muted">{{ entry.candidate_ref }}</td>
+    <td class="num">{{ entry.score }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

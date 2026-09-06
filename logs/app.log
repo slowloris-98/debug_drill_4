@@ -1,0 +1,80 @@
+2026-05-28 08:14:02,551 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=GET path=/api/v1/webhooks/ status=200 ua=volta-config/1.4
+2026-05-28 08:14:03,004 INFO  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=200 attempt=1
+2026-05-28 14:31:47,229 INFO  waypoint.api     org=quillon key=...7c03be49f8 method=GET path=/api/v1/results/ status=200 results=50 ua=quillon-sync/0.9
+2026-05-29 09:41:12,338 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-05-29 09:41:12,502 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-05-29 09:41:12,744 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=GET path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-05-29 10:02:44,116 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-05-29 10:03:14,180 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=2
+2026-05-29 10:04:14,233 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=3
+2026-05-29 10:06:14,301 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=4
+2026-05-29 10:10:14,455 ERROR waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=5 giving_up=true
+2026-05-29 11:37:20,918 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=5 giving_up=true
+2026-05-29 15:02:55,660 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-05-29T14:45:00Z status=200 results=3 ua=northgate-ats-bridge/3.2
+2026-05-30 07:19:31,244 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-05-30 07:19:31,610 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-05-30 22:41:09,772 WARN  waypoint.db      slow_query duration=1.22s sql="SELECT ... FROM core_scorereport WHERE organization_id = ? AND updated_at > ? ORDER BY updated_at, id LIMIT 50"
+2026-06-01 11:03:44,015 INFO  waypoint.publish org=northgate action=single report=prt_000312 webhooks_queued=1
+2026-06-01 11:03:44,190 INFO  waypoint.webhook org=northgate endpoint=ats-bridge.northgate-financial.example event=result.published status=200 attempt=1
+2026-06-01 11:15:02,338 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-01T11:00:00Z status=200 results=1 ua=northgate-ats-bridge/3.2
+2026-06-01 12:53:44,507 INFO  waypoint.publish org=northgate action=single report=prt_000313 webhooks_queued=1
+2026-06-01 13:00:01,882 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-01T12:45:00Z status=200 results=1 ua=northgate-ats-bridge/3.2
+2026-06-02 09:00:12,044 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-06-02 09:33:51,270 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-06-02 09:34:21,318 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=2
+2026-06-02 17:48:30,660 INFO  waypoint.api     org=meridian key=...5e18d7f206 method=GET path=/api/v1/results/ status=200 results=50 ua=meridian-connector/2.0
+2026-06-03 09:12:03,551 INFO  waypoint.grading org=northgate partner=codegrade assessment=3 delivered=48 attempted=46 not_attempted=2
+2026-06-03 09:12:04,118 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=POST path=/api/v1/results/ingest/ status=201 ua=codegrade-partner/4.1
+2026-06-03 14:20:44,903 INFO  waypoint.web     user=sfrye method=GET path=/releases/ status=200 ua=Mozilla/5.0 (Windows NT 10.0)
+2026-06-04 08:02:19,117 INFO  waypoint.api     org=ardent key=...2f6d90ac15 method=GET path=/api/v1/pass-rates/ status=200 ua=Mozilla/5.0 (Macintosh)
+2026-06-04 19:44:55,020 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-06-05 10:15:02,776 INFO  waypoint.api     org=calder key=...4a92c60be1 method=GET path=/api/v1/results/?updated_since=2026-06-05T09:00:00Z status=200 results=12 ua=calder-bridge/1.1
+2026-06-05 16:31:40,229 WARN  waypoint.auth    org=selwyn key=...1b40e92d7a method=GET path=/api/v1/results/ status=401 reason=unknown_key ua=curl/8.4.0
+2026-06-06 18:40:12,338 INFO  waypoint.grading org=lakeshore partner=codegrade assessment=4 delivered=43 attempted=37 not_attempted=6
+2026-06-06 18:40:12,905 INFO  waypoint.api     org=lakeshore key=...9a54f1bb37 method=POST path=/api/v1/results/ingest/ status=201 ua=codegrade-partner/4.1
+2026-06-06 18:40:13,441 INFO  waypoint.api     org=lakeshore key=...9a54f1bb37 method=POST path=/api/v1/results/ingest/ status=201 ua=codegrade-partner/4.1
+2026-06-07 08:11:03,660 INFO  waypoint.web     user=tobrien method=GET path=/ status=200 ua=Mozilla/5.0 (Macintosh)
+2026-06-08 09:14:55,027 INFO  waypoint.web     user=tobrien method=GET path=/?assessment=4 status=200 ua=Mozilla/5.0 (Macintosh)
+2026-06-08 09:22:31,884 INFO  waypoint.export  org=lakeshore assessment=4 shortlist_size=23 first="Devon Pryce" last="Ahmed Chaudhry" ua=Mozilla/5.0 (Macintosh)
+2026-06-08 09:24:02,115 INFO  waypoint.web     user=tobrien method=GET path=/?assessment=4 status=200 ua=Mozilla/5.0 (Macintosh)
+2026-06-08 09:51:44,338 INFO  waypoint.support ticket=6613 note="customer reports shortlist contains candidates who did not sit the assessment"
+2026-06-08 14:02:10,551 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-06-08 14:02:44,702 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-06-08 22:14:09,336 WARN  waypoint.db      slow_query duration=0.94s sql="SELECT COUNT(*), SUM(...), AVG(...) FROM core_scorereport WHERE organization_id = ? AND assessment_id = ?"
+2026-06-09 15:04:02,880 INFO  waypoint.publish org=northgate action=batch assessment=3 reports=48 webhooks_queued=0
+2026-06-09 15:04:03,114 INFO  waypoint.web     user=sfrye method=POST path=/releases/ status=302 ua=Mozilla/5.0 (Windows NT 10.0)
+2026-06-09 15:15:01,229 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T15:00:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 15:30:01,338 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T15:15:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 15:45:01,447 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T15:30:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 16:00:01,556 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T15:45:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 16:15:01,665 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T16:00:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 16:22:44,881 INFO  waypoint.web     user=sfrye method=GET path=/releases/ status=200 ua=Mozilla/5.0 (Windows NT 10.0)
+2026-06-09 17:00:01,774 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-09T16:45:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-09 18:40:55,003 INFO  waypoint.support ticket=6608 note="northgate report 48 released candidates absent from greenhouse"
+2026-06-09 19:02:31,220 INFO  waypoint.webhook org=quillon endpoint=quillon-software.example event=result.published status=200 attempt=1
+2026-06-10 07:45:12,339 INFO  waypoint.grading org=northgate partner=codegrade assessment=3 delivered=10 attempted=9 not_attempted=1
+2026-06-10 09:30:01,448 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-10T09:15:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-10 11:20:03,455 INFO  waypoint.publish org=northgate action=single report=prt_000409 webhooks_queued=1
+2026-06-10 11:20:03,881 INFO  waypoint.webhook org=northgate endpoint=ats-bridge.northgate-financial.example event=result.published status=200 attempt=1
+2026-06-10 11:26:07,112 INFO  waypoint.publish org=northgate action=single report=prt_000410 webhooks_queued=1
+2026-06-10 11:26:07,554 INFO  waypoint.webhook org=northgate endpoint=ats-bridge.northgate-financial.example event=result.published status=200 attempt=1
+2026-06-10 11:30:01,663 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-10T11:15:00Z status=200 results=2 ua=northgate-ats-bridge/3.2
+2026-06-10 11:41:22,004 INFO  waypoint.support ticket=6608 note="customer confirms the two candidates released individually arrived within a minute"
+2026-06-10 13:05:44,229 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=GET path=/api/v1/webhooks/1/ status=200 ua=curl/8.4.0
+2026-06-10 13:06:02,551 INFO  waypoint.support ticket=6601 note="confirmed endpoint still shows hooks.volta-automotive.example on our side"
+2026-06-10 15:22:19,880 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-06-11 08:00:02,117 INFO  waypoint.api     org=volta key=...3d81f4a9c2 method=PATCH path=/api/v1/webhooks/1/ status=200 ua=volta-config/1.4
+2026-06-11 08:00:44,336 WARN  waypoint.webhook org=volta endpoint=hooks.volta-automotive.example event=result.published status=410 attempt=1
+2026-06-11 08:31:55,772 INFO  waypoint.support ticket=6601 note="volta escalating, 264 result.published events undelivered since 2026-05-29"
+2026-06-11 09:15:01,003 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-11T09:00:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-11 10:44:20,338 INFO  waypoint.web     user=tobrien method=GET path=/?assessment=4 status=200 ua=Mozilla/5.0 (Macintosh)
+2026-06-11 10:47:02,551 INFO  waypoint.export  org=lakeshore assessment=4 shortlist_size=23 first="Devon Pryce" last="Ahmed Chaudhry" ua=Mozilla/5.0 (Macintosh)
+2026-06-11 11:02:44,660 INFO  waypoint.support ticket=6613 note="customer asking us to re-run grading for the whole cohort"
+2026-06-11 16:30:12,229 INFO  waypoint.api     org=pinehurst key=...8d71fa35c9 method=GET path=/api/v1/pass-rates/ status=200 ua=pinehurst-reporting/1.0
+2026-06-11 21:14:03,881 WARN  waypoint.db      slow_query duration=1.05s sql="SELECT ... FROM core_scorereport WHERE assessment_id = ? AND status IN (?, ?) ORDER BY raw_score DESC"
+2026-06-12 06:00:01,112 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-12T05:45:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-12 06:30:01,221 INFO  waypoint.api     org=northgate key=...6b27ce80d4 method=GET path=/api/v1/results/?updated_since=2026-06-12T06:15:00Z status=200 results=0 ua=northgate-ats-bridge/3.2
+2026-06-12 07:02:44,330 INFO  waypoint.webhook org=meridian endpoint=hooks.meridian-freight.example event=result.published status=200 attempt=1
+2026-06-12 07:41:19,445 INFO  waypoint.support ticket=6601 note="escalated to CXE queue"
+2026-06-12 07:41:33,556 INFO  waypoint.support ticket=6608 note="escalated to CXE queue"
+2026-06-12 07:41:52,667 INFO  waypoint.support ticket=6613 note="escalated to CXE queue"

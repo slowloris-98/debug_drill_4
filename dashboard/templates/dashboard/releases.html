@@ -1,0 +1,20 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Releases{% endblock %}
+{% block content %}
+<h1>Recently released results</h1>
+<table>
+  <tr>
+    <th>Candidate</th><th>Assessment</th><th>Score</th>
+    <th>Released</th><th>Last changed</th>
+  </tr>
+  {% for report in reports %}
+  <tr>
+    <td>{{ report.candidate.full_name }}</td>
+    <td>{{ report.assessment.name }}</td>
+    <td class="num">{{ report.raw_score }}</td>
+    <td>{{ report.published_at|date:"Y-m-d H:i" }}</td>
+    <td>{{ report.updated_at|date:"Y-m-d H:i" }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

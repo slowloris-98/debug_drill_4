@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(py -3 -m venv .venv)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe -m pip install --quiet --upgrade pip)",
+      "PowerShell(.venv\\\\Scripts\\\\pip.exe install --quiet \"Django==5.2.6\" \"djangorestframework==3.16.1\" \"pytest==8.3.5\" \"pytest-django==4.9.0\")",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe -c \"import django,rest_framework,pytest;print\\('ok',django.get_version\\(\\),rest_framework.VERSION,pytest.__version__\\)\")",
+      "PowerShell(Start-Process -FilePath \".venv\\\\Scripts\\\\python.exe\" -ArgumentList \"manage.py\",\"runserver\",\"8000\",\"--noreload\" -WorkingDirectory \"d:\\\\Atreya\\\\College\\\\Projects\\\\debug_drill_4\" -WindowStyle Hidden; Start-Sleep -Seconds 4; $h=@{Authorization=\"Api-Key wp_live_volta_3d81f4a9c2\"}; Write-Output \"--- PATCH events ---\"; \\(Invoke-WebRequest -Uri \"http://127.0.0.1:8000/api/v1/webhooks/1/\" -Method Patch -Headers $h -ContentType \"application/json\" -Body '{\"events\":[\"result.published\"]}' -UseBasicParsing\\) | ForEach-Object { $_.StatusCode; $_.Content }; Write-Output \"--- PATCH target_url ---\"; \\(Invoke-WebRequest -Uri \"http://127.0.0.1:8000/api/v1/webhooks/1/\" -Method Patch -Headers $h -ContentType \"application/json\" -Body '{\"target_url\":\"https://ingest.volta-automotive.example/v2/waypoint\"}' -UseBasicParsing\\) | ForEach-Object { $_.StatusCode; $_.Content })",
+      "PowerShell($h=@{Authorization=\"Api-Key wp_live_lakeshore_9a54f1bb37\"}; $r=Invoke-RestMethod -Uri \"http://127.0.0.1:8000/api/v1/shortlists/4/\" -Headers $h; Write-Output \"count: $\\($r.candidates.Count\\)\"; $r.candidates[0..6] | ForEach-Object { \"$\\($_.candidate_name\\) $\\($_.score\\)\" }; Write-Output \"--- pass rates ---\"; \\(Invoke-RestMethod -Uri \"http://127.0.0.1:8000/api/v1/pass-rates/\" -Headers $h\\).assessments | ForEach-Object { \"$\\($_.assessment\\): reports=$\\($_.reports\\) attempted=$\\($_.attempted\\) not_attempted=$\\($_.not_attempted\\) passed=$\\($_.passed\\) rate=$\\($_.pass_rate\\) avg=$\\($_.average_score\\)\" })",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py shell -c \"from core.models import ScoreReport as S; b = S.objects.filter\\(organization__slug='northgate', published_at__day=9\\); r = b.first\\(\\); print\\(b.count\\(\\), r.updated_at, r.published_at, sum\\(x.deliveries.count\\(\\) for x in b\\)\\)\")",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py shell -c \"from core.models import ScoreReport as S; from core.services import publish_reports; ids = list\\(S.objects.filter\\(organization__slug='northgate', status='graded'\\).values_list\\('id', flat=True\\)[:3]\\); print\\('published', publish_reports\\(ids\\)\\); [print\\(r.id, r.status, r.updated_at, r.deliveries.count\\(\\)\\) for r in S.objects.filter\\(id__in=ids\\)]\")",
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "PowerShell(git add -A)"
+    ]
+  }
+}
