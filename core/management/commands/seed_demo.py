@@ -12,7 +12,7 @@ import random
 
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
-from django.db import transaction
+from django.db import connection, transaction
 
 from core.models import (
     ApiKey,
@@ -154,6 +154,13 @@ class Command(BaseCommand):
         ApiKey.objects.all().delete()
         Organization.objects.all().delete()
         User.objects.all().delete()
+
+        # Re-seeding produces the same identifiers as the first run.
+        if connection.vendor == "sqlite":
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "DELETE FROM sqlite_sequence WHERE name LIKE 'core_%%'"
+                )
 
     def _organizations(self):
         User.objects.create_superuser("wpops", "wpops@waypoint.example", "waypoint")

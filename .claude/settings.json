@@ -10,7 +10,10 @@
       "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py shell -c \"from core.models import ScoreReport as S; b = S.objects.filter\\(organization__slug='northgate', published_at__day=9\\); r = b.first\\(\\); print\\(b.count\\(\\), r.updated_at, r.published_at, sum\\(x.deliveries.count\\(\\) for x in b\\)\\)\")",
       "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py shell -c \"from core.models import ScoreReport as S; from core.services import publish_reports; ids = list\\(S.objects.filter\\(organization__slug='northgate', status='graded'\\).values_list\\('id', flat=True\\)[:3]\\); print\\('published', publish_reports\\(ids\\)\\); [print\\(r.id, r.status, r.updated_at, r.deliveries.count\\(\\)\\) for r in S.objects.filter\\(id__in=ids\\)]\")",
       "Bash(./.venv/Scripts/python.exe -c ' *)",
-      "PowerShell(git add -A)"
+      "PowerShell(git add -A)",
+      "Bash(./.venv/Scripts/python.exe manage.py shell -c ' *)",
+      "Bash(./.venv/Scripts/python.exe manage.py seed_demo)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe -m pytest -q 2>&1)"
     ]
   }
 }
