@@ -6,6 +6,8 @@ customer's ATS receives it in that order.
 """
 
 from core.models import ScoreReport
+from django.db.models import IntegerField
+from django.db.models.functions import Cast
 
 CONSIDERED_STATUSES = (ScoreReport.GRADED, ScoreReport.PUBLISHED)
 
@@ -17,20 +19,21 @@ def considered_reports(assessment):
             assessment=assessment, status__in=CONSIDERED_STATUSES
         )
         .select_related("candidate")
+        .annotate(raw_score_num=Cast("raw_score", output_field=IntegerField()))
     )
 
 
 def shortlist(assessment):
     """Candidates on `assessment` who reached its pass mark, best first."""
     qualified = considered_reports(assessment).filter(
-        raw_score__gte=assessment.pass_mark
+        raw_score_num__gte=assessment.pass_mark
     )
 
     return [
         {
             "candidate_ref": report.candidate.external_ref,
             "candidate_name": report.candidate.full_name,
-            "score": report.raw_score,
+            "score": report.raw_score_num,
         }
-        for report in qualified.order_by("-raw_score", "candidate__full_name")
+        for report in qualified.order_by("-raw_score_num", "candidate__full_name")
     ]
