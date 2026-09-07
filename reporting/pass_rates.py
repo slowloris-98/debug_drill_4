@@ -9,9 +9,10 @@ from django.db import connection
 
 SUMMARY_SQL = """
     SELECT COUNT(*)                                             AS reports,
-           SUM(CASE WHEN r.raw_score = '' THEN 1 ELSE 0 END)    AS not_attempted,
-           SUM(CASE WHEN r.raw_score >= %s THEN 1 ELSE 0 END)   AS passed,
-           AVG(r.raw_score)                                     AS average_score
+           SUM(CASE WHEN r.raw_score GLOB '[0-9]*' THEN 0 ELSE 1 END)    AS not_attempted,
+           SUM(CASE WHEN r.raw_score GLOB '[0-9]*' 
+                AND CAST(r.raw_score AS FLOAT) >= %s THEN 1 ELSE 0 END)   AS passed,
+           AVG(CASE WHEN r.raw_score GLOB '[0-9]*' THEN CAST(r.raw_score AS FLOAT) END)                                     AS average_score
       FROM core_scorereport r
      WHERE r.organization_id = %s
        AND r.assessment_id = %s
